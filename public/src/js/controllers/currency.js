@@ -20,7 +20,7 @@ angular.module('insight.currency').controller('CurrencyController',
 
         if (this.symbol === 'USD') {
           response = _roundFloat((value * this.factor), 2);
-        } else if (this.symbol === 'lites') {
+        } else if (this.symbol === 'einrs') {
           this.factor = 1000;
           response = _roundFloat((value * this.factor), 5);
         } else if (this.symbol === 'photons') {
@@ -47,7 +47,7 @@ angular.module('insight.currency').controller('CurrencyController',
         Currency.get({}, function(res) {
           $rootScope.currency.factor = $rootScope.currency.bitstamp = res.data.bitstamp;
         });
-      } else if (currency === 'lites') {
+      } else if (currency === 'einrs') {
         $rootScope.currency.factor = 1000;
       } else if (currency === 'photons') {
         $rootScope.currency.factor = 1000000;
